@@ -1,0 +1,17 @@
+# Dify 本地知识库搭建
+
+## 一、在线链接
+[https://cloud.dify.ai/apps](https://cloud.dify.ai/apps)
+
+## 二、本地搭建
+
+### 2.1 GitHub 地址
+[https://github.com/langgenius/dify/blob/main/README_CN.md](https://github.com/langgenius/dify/blob/main/README_CN.md)
+
+### 2.2 快速启动
+
+启动 Dify 服务器的最简单方法是运行我们的 `docker-compose.yml` 文件。在运行安装命令之前，请确保您的机器上安装了 Docker 和 Docker Compose：
+
+1. 进入 Dify 的 `docker` 文件夹：
+   ```bash
+   cd docker
