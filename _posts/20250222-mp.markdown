@@ -1,0 +1,74 @@
+### dify搭建本地知识库
+
+一、在线链接
+https://cloud.dify.ai/apps
+二、本地搭建
+2.1 github地址
+https://github.com/langgenius/dify/blob/main/README_CN.md
+2.2 快速启动
+启动 Dify 服务器的最简单方法是运行我们的 docker-compose.yml 文件。在运行安装命令之前，请确保您的机器上安装了 Docker 和 Docker Compose：
+cd docker
+cp .env.example .env
+docker compose up -d
+2.2.1 技巧
+可以本地手动在dify源码docker文件夹下，打开命令行，输入dify启动命令
+
+2.2.2 终端命令中执行：
+cp .env.example .env
+docker compose up -d
+稍等几分钟
+
+2.2.3 访问
+运行后，可以在浏览器上访问 http://localhost/install 进入 Dify 控制台并开始初始化安装操作。 '
+
+2.2.4 设置管理员账号
+
+本地部署ok
+2.2.5 登录dify
+
+
+2.2.6 创建空知识库
+
+2.2.7 选择大模型
+
+
+7467092147586990115
+
+
+2.2.8 输入命令，让cursor生成插件代码
+开发一个浏览器插件，用户可以将当前网页内容导入到dify知识库，具体要求如下：
+● 你需要使用表格允许用户去填写以下元素：dify API token，知识库id（对应dataset_id），这些数据储存在本地即可
+● 支持单独保存dify API token，知识库id任一选项的设置，支持一键清除保存的设置
+● 插件界面采用苹果风格的设计（MVP版本不需要配置icon图片）
+这是dify知识库的api请求示例：
+curl --location --request POST 'http://localhost/v1/datasets/{dataset_id}/document/create-by-text' \
+--header 'Authorization: Bearer {api_key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name": "text","text": "text","indexing_technique": "high_quality","process_rule": {"mode": "automatic"}}'
+需要注意的是，Dify服务器是运行在本地的，端口是默认的80
+api文档地址在这，方便你查看： https://docs.dify.ai/guides/knowledge-base/knowledge-and-documents-maintenance/maintain-dataset-via-api
+
+2.2.9 导入插件
+导入到谷歌浏览器，输入下面信息即可导入
+知识库id：cde151ec-c691-4f86-baec-ba78220f27b1
+api-key：dataset-RBbQQByC7nOgqgQmr7aSeRUd
+
+
+
+导入成功
+
+
+2.2.10 创建智能体
+
+
+2.2.11 测试
+
+
+2.2.12 发布
+安装Dify Chatbot 插件
+
+
+浏览器右下角出现对话框
+
+
+回答会给出知识库引用内容
